@@ -1,55 +1,59 @@
-[gd_scene load_steps=15 format=3 uid="uid://jhyuywgfd0sf"]
+[gd_scene load_steps=15 format=3 uid="uid://cwv8jbodf632c"]
 
-[ext_resource type="Script" uid="uid://cwhp44gi4viu0" path="res://scenes/start_menu.gd" id="1_h61rw"]
-[ext_resource type="Texture2D" uid="uid://ddxex7tpqi6ep" path="res://assets/backgroud/ChatGPT Image 18 нояб. 2025 г., 22_35_14.png" id="2_fcv5n"]
-[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_4v6gu"]
-[ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="4_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://ddxex7tpqi6ep" path="res://assets/backgroud/ChatGPT Image 18 нояб. 2025 г., 22_35_14.png" id="1_5xbjy"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_4nkto"]
+[ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="3_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://wwhietw64uo2" path="res://scenes/knignt.tscn" id="4_pa8r4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhnvy"]
-atlas = ExtResource("4_nxjfj")
+atlas = ExtResource("3_fcfvj")
 region = Rect2(209, 81, 46, 14)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhnvy"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15mv3"]
 texture = SubResource("AtlasTexture_mhnvy")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ytvr"]
-atlas = ExtResource("4_nxjfj")
+atlas = ExtResource("3_fcfvj")
 region = Rect2(208, 80, 48, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ytvr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3sih"]
 texture = SubResource("AtlasTexture_4ytvr")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
-atlas = ExtResource("4_nxjfj")
+atlas = ExtResource("3_fcfvj")
 region = Rect2(209, 81, 46, 14)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86rl"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2y5yt"]
 texture = SubResource("AtlasTexture_g3eks")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
-atlas = ExtResource("4_nxjfj")
+atlas = ExtResource("3_fcfvj")
 region = Rect2(208, 80, 48, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3eks"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2os1m"]
 texture = SubResource("AtlasTexture_v86rl")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
-atlas = ExtResource("4_nxjfj")
+atlas = ExtResource("3_fcfvj")
 region = Rect2(209, 81, 46, 14)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13sgg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_go7sj"]
 texture = SubResource("AtlasTexture_13sgg")
 
-[node name="start_menu" type="Node2D"]
-script = ExtResource("1_h61rw")
+[node name="level_1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+visible = false
+format = 2
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_fcv5n")
+texture = ExtResource("1_5xbjy")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect2"]
+visible = false
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
@@ -73,11 +77,11 @@ theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1
 theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
-theme_override_fonts/font = ExtResource("3_4v6gu")
+theme_override_fonts/font = ExtResource("2_4nkto")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxTexture_mhnvy")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_4ytvr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_15mv3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e3sih")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2y5yt")
 text = "НАЧАТЬ ИГРУ"
 
 [node name="quit" type="Button" parent="TextureRect2/VBoxContainer"]
@@ -87,12 +91,14 @@ theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1
 theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
-theme_override_fonts/font = ExtResource("3_4v6gu")
+theme_override_fonts/font = ExtResource("2_4nkto")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxTexture_mhnvy")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_g3eks")
-theme_override_styles/hover = SubResource("StyleBoxTexture_13sgg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_15mv3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2os1m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_go7sj")
 text = "ВЫХОД"
 
-[connection signal="pressed" from="TextureRect2/VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="TextureRect2/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_pa8r4")]
+position = Vector2(571, 358)
+scale = Vector2(4.33, 4.33)
+speed = 100

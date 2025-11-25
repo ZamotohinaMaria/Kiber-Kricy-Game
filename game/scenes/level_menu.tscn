@@ -7,7 +7,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rus8k"]
 atlas = ExtResource("3_teein")
-region = Rect2(17, 81, 46, 14)
+region = Rect2(145, 112, 46, 15)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xbjy"]
 texture = SubResource("AtlasTexture_rus8k")
@@ -51,27 +51,23 @@ texture = SubResource("AtlasTexture_v86rl")
 script = ExtResource("1_7obll")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1276.0
-offset_bottom = 724.0
+offset_right = 1280.0
+offset_bottom = 720.0
 texture = ExtResource("1_jqwib")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="TextureRect2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -245.0
-offset_top = 39.0
-offset_right = 245.0
-offset_bottom = 209.0
+offset_left = -254.0
+offset_right = 254.0
+offset_bottom = 116.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
 theme_override_fonts/font = ExtResource("2_7obll")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_5xbjy")
 text = "Ваше приключение начинается здесь..."
 horizontal_alignment = 1
