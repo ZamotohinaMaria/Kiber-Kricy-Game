@@ -1,27 +1,3 @@
-[gd_scene load_steps=5 format=3 uid="uid://biq2ubv708xcu"]
+[gd_scene format=3 uid="uid://cwv8jbodf632c"]
 
-[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="1_014kd"]
-[ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="2_bswci"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rus8k"]
-atlas = ExtResource("2_bswci")
-region = Rect2(17, 81, 46, 14)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xbjy"]
-texture = SubResource("AtlasTexture_rus8k")
-
-[node name="level1" type="Node2D"]
-
-[node name="Label" type="Label" parent="."]
-offset_left = 408.0
-offset_top = 30.0
-offset_right = 898.0
-offset_bottom = 200.0
-theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
-theme_override_fonts/font = ExtResource("1_014kd")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_5xbjy")
-text = "Ваше приключение начинается здесь..."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+[node name="level_1" type="Node2D"]

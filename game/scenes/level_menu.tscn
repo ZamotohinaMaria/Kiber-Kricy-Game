@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://biq2ubv708xcu"]
+
+[ext_resource type="Script" uid="uid://ttcyqabvmx6k" path="res://scenes/level_menu.gd" id="1_7obll"]
+[ext_resource type="Texture2D" uid="uid://4gr0pfqwaa7w" path="res://assets/backgroud/blur.png" id="1_jqwib"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_7obll"]
+[ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="3_teein"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rus8k"]
+atlas = ExtResource("3_teein")
+region = Rect2(17, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xbjy"]
+texture = SubResource("AtlasTexture_rus8k")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
+atlas = ExtResource("3_teein")
+region = Rect2(209, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rus8k"]
+texture = SubResource("AtlasTexture_g3eks")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+atlas = ExtResource("3_teein")
+region = Rect2(208, 80, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4nkto"]
+texture = SubResource("AtlasTexture_13sgg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6lef"]
+atlas = ExtResource("3_teein")
+region = Rect2(209, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fcfvj"]
+texture = SubResource("AtlasTexture_i6lef")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ytvr"]
+atlas = ExtResource("3_teein")
+region = Rect2(208, 80, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pa8r4"]
+texture = SubResource("AtlasTexture_4ytvr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
+atlas = ExtResource("3_teein")
+region = Rect2(209, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15mv3"]
+texture = SubResource("AtlasTexture_v86rl")
+
+[node name="level_menu" type="Node2D"]
+script = ExtResource("1_7obll")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1276.0
+offset_bottom = 724.0
+texture = ExtResource("1_jqwib")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_top = 39.0
+offset_right = 245.0
+offset_bottom = 209.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
+theme_override_fonts/font = ExtResource("2_7obll")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_5xbjy")
+text = "Ваше приключение начинается здесь..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect2"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.5
+offset_top = -556.0
+offset_right = 181.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="start" type="Button" parent="TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
+theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
+theme_override_fonts/font = ExtResource("2_7obll")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxTexture_rus8k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4nkto")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fcfvj")
+text = "LEVEL 1"
+
+[node name="quit" type="Button" parent="TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
+theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
+theme_override_fonts/font = ExtResource("2_7obll")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxTexture_rus8k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pa8r4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_15mv3")
+text = "LEVEL 2"
+
+[node name="quit2" type="Button" parent="TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
+theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
+theme_override_fonts/font = ExtResource("2_7obll")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxTexture_rus8k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pa8r4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_15mv3")
+text = "LEVEL 3
+"
+
+[connection signal="pressed" from="TextureRect2/VBoxContainer/start" to="." method="_on_start_pressed"]
