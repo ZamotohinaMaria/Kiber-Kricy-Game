@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://jhyuywgfd0sf"]
 
-[ext_resource type="Script" uid="uid://cwhp44gi4viu0" path="res://scenes/start_menu.gd" id="1_h61rw"]
+[ext_resource type="Script" uid="uid://cwhp44gi4viu0" path="res://scenes/Menus/start_menu.gd" id="1_h61rw"]
 [ext_resource type="Texture2D" uid="uid://ddxex7tpqi6ep" path="res://assets/backgroud/ChatGPT Image 18 нояб. 2025 г., 22_35_14.png" id="2_fcv5n"]
 [ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_4v6gu"]
 [ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="4_nxjfj"]
