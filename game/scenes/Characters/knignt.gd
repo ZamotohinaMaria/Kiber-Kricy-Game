@@ -21,5 +21,8 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	
 	move_and_collide(velocity * delta)
+	z_index = int(global_position.y)
+	
+#func _process(delta):
+	#z_index = int(global_position.y)

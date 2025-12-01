@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn337mseq7f5k"]
+
+[ext_resource type="Texture2D" uid="uid://cekxdewtild1o" path="res://assets/backgroud/tilesets/dark-wood.png" id="1_0fdb8"]
+[ext_resource type="Script" uid="uid://bdpgchav23efo" path="res://scenes/items/table_1.gd" id="1_hauwa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hauwa"]
+atlas = ExtResource("1_0fdb8")
+region = Rect2(0, 233, 96, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usn8e"]
+size = Vector2(96, 36)
+
+[node name="table-1" type="Node2D"]
+script = ExtResource("1_hauwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = SubResource("AtlasTexture_hauwa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_usn8e")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bumpq5s05m8ou"]
+
+[ext_resource type="Texture2D" uid="uid://dwmkvq1qp7v24" path="res://assets/backgroud/tilesets/Objects/Lighting & Fire/Lighting.png" id="1_kgss0"]
+[ext_resource type="Script" uid="uid://dlj8aypwe14h" path="res://scenes/items/candlestick.gd" id="1_x88bs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x88bs"]
+atlas = ExtResource("1_kgss0")
+region = Rect2(0, 7, 32, 57)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5ltk"]
+radius = 7.0
+height = 18.0
+
+[node name="candlestick" type="Node2D"]
+z_as_relative = false
+script = ExtResource("1_x88bs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = SubResource("AtlasTexture_x88bs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_as_relative = false
+position = Vector2(0, -2)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_as_relative = false
+position = Vector2(0, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_x5ltk")
