@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqg875ba4624d"]
+
+[ext_resource type="Texture2D" uid="uid://dgt7fwus1opp4" path="res://assets/backgroud/tilesets/LPC Submissions/hourse.png" id="1_kq355"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0rv2"]
+atlas = ExtResource("1_kq355")
+region = Rect2(0, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab728"]
+atlas = ExtResource("1_kq355")
+region = Rect2(62, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5jhw"]
+atlas = ExtResource("1_kq355")
+region = Rect2(31, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3b50"]
+atlas = ExtResource("1_kq355")
+region = Rect2(62, 34, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvp11"]
+atlas = ExtResource("1_kq355")
+region = Rect2(93, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dfwj"]
+atlas = ExtResource("1_kq355")
+region = Rect2(0, 34, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlpom"]
+atlas = ExtResource("1_kq355")
+region = Rect2(31, 34, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2bdh"]
+atlas = ExtResource("1_kq355")
+region = Rect2(93, 34, 31, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_di54i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0rv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab728")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5jhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3b50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvp11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dfwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlpom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2bdh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="Horse" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.75, 0)
+scale = Vector2(1.048387, 1)
+sprite_frames = SubResource("SpriteFrames_di54i")
+animation = &"idle"
+autoplay = "idle"
