@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ugxowi4y3nrr"]
+
+[ext_resource type="Script" uid="uid://vckuli3gslwy" path="res://scenes/items/column_3.gd" id="1_c1it8"]
+[ext_resource type="Texture2D" uid="uid://caajepqeku5n8" path="res://assets/backgroud/tilesets/LPC Submissions/decorations-medieval.png" id="1_lys7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oljc"]
+atlas = ExtResource("1_lys7g")
+region = Rect2(99, 234, 29, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k72q0"]
+atlas = ExtResource("1_lys7g")
+region = Rect2(65, 288, 27, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcqb7"]
+size = Vector2(26, 33)
+
+[node name="column" type="Node2D"]
+script = ExtResource("1_c1it8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = SubResource("AtlasTexture_6oljc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-3, -40)
+texture = SubResource("AtlasTexture_k72q0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_wcqb7")

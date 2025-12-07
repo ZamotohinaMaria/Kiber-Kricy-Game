@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://babadbg6a42f4"]
+
+[ext_resource type="Texture2D" uid="uid://bka54yd4bkpt0" path="res://assets/backgroud/tilesets/Objects/Lighting & Fire/Fire.png" id="1_5w14t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70dkc"]
+atlas = ExtResource("1_5w14t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v073e"]
+atlas = ExtResource("1_5w14t")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqelx"]
+atlas = ExtResource("1_5w14t")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgykq"]
+atlas = ExtResource("1_5w14t")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbifl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70dkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v073e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqelx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgykq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="fire" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_wbifl")
+autoplay = "default"
+frame_progress = 0.55267054
