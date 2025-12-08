@@ -67,6 +67,7 @@ animations = [{
 }]
 
 [node name="Horse" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.75, 0)

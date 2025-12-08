@@ -126,6 +126,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ukf8l")
+autoplay = "default"
 frame_progress = 0.90858746
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

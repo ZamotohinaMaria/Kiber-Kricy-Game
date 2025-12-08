@@ -1,7 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn337mseq7f5k"]
 
 [ext_resource type="Texture2D" uid="uid://cekxdewtild1o" path="res://assets/backgroud/tilesets/dark-wood.png" id="1_0fdb8"]
-[ext_resource type="Script" uid="uid://bdpgchav23efo" path="res://scenes/items/table_1.gd" id="1_hauwa"]
+
+[sub_resource type="GDScript" id="GDScript_0fdb8"]
+script/source = "extends Node2D
+func _process(delta):
+	z_index = int(global_position.y)
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hauwa"]
 atlas = ExtResource("1_0fdb8")
@@ -11,7 +16,7 @@ region = Rect2(0, 233, 96, 43)
 size = Vector2(96, 36)
 
 [node name="table-1" type="Node2D"]
-script = ExtResource("1_hauwa")
+script = SubResource("GDScript_0fdb8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
