@@ -11,7 +11,7 @@ region = Rect2(320, 288, 64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or0d5"]
 size = Vector2(65, 19)
 
-[node name="Area2D" type="Area2D"]
+[node name="empty_cabinet" type="Area2D"]
 position = Vector2(8, -22)
 script = ExtResource("1_diud0")
 
