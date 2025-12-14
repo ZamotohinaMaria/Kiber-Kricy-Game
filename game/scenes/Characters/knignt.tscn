@@ -364,5 +364,8 @@ animation = &"lvl1_run_up"
 frame_progress = 0.34739405
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_enabled = false
+limit_left = -650
+limit_top = -1000
+limit_right = 2000
+limit_bottom = 1450
 script = ExtResource("4_5h0f7")

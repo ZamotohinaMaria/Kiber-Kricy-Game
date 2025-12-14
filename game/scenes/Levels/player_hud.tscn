@@ -1103,6 +1103,7 @@ texture_region_size = Vector2i(8, 8)
 51:27/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_dexjj"]
+tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_1y7xb")
 
 [node name="PlayerHUD" type="Control"]
