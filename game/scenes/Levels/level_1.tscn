@@ -30414,11 +30414,7 @@ region = Rect2(2, 0, 12, 15)
 script = ExtResource("26_t6mv3")
 name = "Золотой ключ"
 icon = SubResource("AtlasTexture_jxar1")
-description = null
-speed = null
-power = null
-health = null
-key = null
+key = 1
 metadata/_custom_type_script = "uid://cqubdslfyvb4u"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uticb"]
@@ -30429,11 +30425,6 @@ region = Rect2(809, 521, 13, 15)
 script = ExtResource("26_t6mv3")
 name = "Яблоко"
 icon = SubResource("AtlasTexture_uticb")
-description = null
-speed = null
-power = null
-health = null
-key = null
 metadata/_custom_type_script = "uid://cqubdslfyvb4u"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhe24"]
