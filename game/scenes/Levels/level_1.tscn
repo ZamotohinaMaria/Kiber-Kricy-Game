@@ -6777,6 +6777,8 @@ texture = ExtResource("3_ckuwr")
 29:191/0 = 0
 30:191/0 = 0
 31:191/0 = 0
+31:115/0 = 0
+31:115/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ju56"]
 texture = ExtResource("4_5ch4f")
@@ -40376,6 +40378,11 @@ tile_set = SubResource("TileSet_de30y")
 use_parent_material = true
 tile_set = SubResource("TileSet_de30y")
 
+[node name="Layer2" type="TileMapLayer" parent="Outside"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAC8AAQAfAHMAAAAFAC8AAQAfAHMAAAAGAC8AAQAfAHMAAAAIAC8AAQAfAHMAAAAJAC8AAQAfAHMAAAAKAC8AAQAfAHMAAAAOAC8AAQAfAHMAAAAPAC8AAQAfAHMAAAAQAC8AAQAfAHMAAAA=")
+tile_set = SubResource("TileSet_de30y")
+
 [node name="floor and walls" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ptgt0")
 format = 2
@@ -40506,7 +40513,6 @@ position = Vector2(176, 560)
 [node name="meals" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_uticb")
 format = 2
-layer_0/tile_data = PackedInt32Array(-196607, 262145, 0, -131071, 262145, 1, -196606, 327681, 0, -131070, 327681, 1, -196605, 131073, 0, -131069, 131073, 1, -196604, 196609, 0, -131068, 196609, 1, -458743, 131073, 0, -393207, 131073, 1, -458742, 196609, 0, -393206, 196609, 1)
 
 [node name="Layer1" type="TileMapLayer" parent="meals"]
 use_parent_material = true

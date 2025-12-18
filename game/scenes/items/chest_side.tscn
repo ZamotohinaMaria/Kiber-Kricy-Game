@@ -12,14 +12,11 @@ region = Rect2(195, 416, 26, 63)
 size = Vector2(11.25, 48)
 
 [node name="chest_side" type="Area2D"]
+collision_layer = 6
 script = ExtResource("1_h3f18")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_em3by")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.375, 2)
-shape = SubResource("RectangleShape2D_vk3kx")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
@@ -33,3 +30,11 @@ text = "Е - обыскать"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 2
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6.375, 2)
+shape = SubResource("RectangleShape2D_vk3kx")

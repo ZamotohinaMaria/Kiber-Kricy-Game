@@ -13,6 +13,7 @@ size = Vector2(65, 19)
 
 [node name="empty_cabinet" type="Area2D"]
 position = Vector2(8, -22)
+collision_layer = 4
 script = ExtResource("1_diud0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
