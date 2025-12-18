@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg5f7afb4p7mv"]
+
+[ext_resource type="Texture2D" uid="uid://cdlbmcbnc1jrk" path="res://assets/backgroud/tilesets/Objects/Decoration/Planters.png" id="1_0tuj8"]
+[ext_resource type="Script" uid="uid://bywyjd6a1x1fj" path="res://scenes/items/vase.gd" id="1_vrqhl"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_vrqhl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr7ot"]
+atlas = ExtResource("1_0tuj8")
+region = Rect2(98, 47, 28, 37)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60ky6"]
+radius = 23.021729
+
+[node name="vase" type="Area2D"]
+script = ExtResource("1_vrqhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_yr7ot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4)
+shape = SubResource("CircleShape2D_60ky6")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = -86.0
+offset_top = -46.0
+offset_right = 10.0
+offset_bottom = -23.0
+theme_override_fonts/font = ExtResource("2_vrqhl")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

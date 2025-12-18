@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bimrwenvwj17n"]
+
+[ext_resource type="Script" uid="uid://dledwq27lo4hp" path="res://scenes/items/statue.gd" id="1_d7a0j"]
+[ext_resource type="Texture2D" uid="uid://caajepqeku5n8" path="res://assets/backgroud/tilesets/LPC Submissions/decorations-medieval.png" id="1_j37a2"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_d7a0j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhffg"]
+atlas = ExtResource("1_j37a2")
+region = Rect2(65, 288, 29, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahr1i"]
+size = Vector2(42, 37)
+
+[node name="statue" type="Area2D"]
+z_index = 3
+script = ExtResource("1_d7a0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_rhffg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 19.5)
+shape = SubResource("RectangleShape2D_ahr1i")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = -48.0
+offset_top = 35.0
+offset_right = 48.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("2_d7a0j")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

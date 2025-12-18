@@ -12,8 +12,6 @@ region = Rect2(72, 256, 51, 33)
 size = Vector2(52.5, 19)
 
 [node name="chest_back" type="Area2D"]
-z_index = 3
-collision_layer = 4
 script = ExtResource("1_1ggr8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

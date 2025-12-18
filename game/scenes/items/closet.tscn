@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://d31c70mboeupf"]
+
+[ext_resource type="Texture2D" uid="uid://cekxdewtild1o" path="res://assets/backgroud/tilesets/dark-wood.png" id="1_fxkkm"]
+[ext_resource type="Script" uid="uid://4frti1rgoygw" path="res://scenes/items/closet.gd" id="1_w5x7g"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_w5x7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn5il"]
+atlas = ExtResource("1_fxkkm")
+region = Rect2(224, 133, 20, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxno5"]
+size = Vector2(23, 48)
+
+[node name="closet" type="Area2D"]
+script = ExtResource("1_w5x7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_yn5il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 14)
+shape = SubResource("RectangleShape2D_cxno5")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_top = 35.0
+offset_right = 96.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("2_w5x7g")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

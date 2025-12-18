@@ -5,9 +5,9 @@ extends Camera2D
 
 # Настройки зума
 @export var zoom_speed: float = 0.1
-@export var min_zoom: float = 0.5
-@export var max_zoom: float = 5.0
-@export var initial_zoom: float = 3.0
+@export var min_zoom: float = 2.8
+@export var max_zoom: float = 2.8
+@export var initial_zoom: float = 2.8
 
 # Плавность зума
 @export var smooth_zoom: bool = true
