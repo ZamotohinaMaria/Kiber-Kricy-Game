@@ -1,21 +1,21 @@
 extends CharacterBody2D
 
 var chase = false
-var speed = 120
+var speed = 60
 @onready var anim = $AnimatedSprite2D
 @onready var animP = $AnimationPlayer
 var alive = true
-@export var max_health := 50
+@export var max_health := 100
 var health := max_health
 
 var player_in_attack_zone := false
 var is_attacking := false
 var can_attack := true
-var slime_attack = 20
+var orc_attack = 40
 
 func take_damage(amount: int) -> void:
 	health -= amount
-	print("Slime HP:", health)
+	print("ORC HP:", health)
 
 	if health <= 0:
 		death()
@@ -80,7 +80,7 @@ func death():
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.take_damage(slime_attack)
+		body.take_damage(orc_attack)
 
 func _on_att_zone_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
@@ -107,7 +107,7 @@ func start_attack():
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name.begins_with("attack"):
 		is_attacking = false
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(1.5).timeout
 		can_attack = true
 		
 func _ready():

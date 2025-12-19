@@ -2,11 +2,15 @@ extends CharacterBody2D
 
 @export var hud: Node
 @onready var step_player: AudioStreamPlayer2D = $StepPlayer
+@onready var animP = $AnimationPlayer
 
 # ---------- БАЗОВЫЕ СТАТЫ ----------
 @export var speed: float = 200.0
 @export var attack: int = 20
 @export var max_health: int = 200
+
+@export var regen_amount := 10     # сколько хп восстанавливает
+@export var regen_interval := 5.0  # раз в сколько секунд
 
 var current_health: int
 var artefact_count: int
@@ -18,6 +22,8 @@ var _was_moving : bool = false
 var current_interactable: Node = null
 var inventory: Array[ItemData] = []
 var can_move: bool = true
+var alive := true
+
 # ---------- БАФЫ ----------
 var bonus_speed: float = 0.0
 var bonus_attack: int = 0
@@ -33,9 +39,22 @@ func get_attack() -> int:
 	return attack + bonus_attack
 
 func get_max_health() -> int:
+	current_health = max_health + bonus_max_health
 	return max_health + bonus_max_health
 	
+func regenerate_hp():
+	if not alive:
+		return
+
+	if current_health < max_health:
+		current_health = min(current_health + regen_amount, max_health)
+		print("boss regen HP:", current_health)	
 	
+func start_hp_regen():
+	while alive:
+		await get_tree().create_timer(regen_interval).timeout
+		regenerate_hp()
+		
 func get_input():
 	if is_attacking:
 		velocity = Vector2.ZERO
@@ -61,19 +80,20 @@ func get_input():
 
 func attack_func():
 	is_attacking = true
-
 	if abs(last_dir.x) > abs(last_dir.y):
 		if last_dir.x > 0:
-			$Animation.play("lvl1_sword_right")
+			animP.play("lvl1_sword_right")
 		else:
-			$Animation.play("lvl1_sword_left")
+			animP.play("lvl1_sword_left")
 	else:
 		if last_dir.y > 0:
-			$Animation.play("lvl1_sword_down")
+			animP.play("lvl1_sword_down")
 		else:
-			$Animation.play("lvl1_sword_u")
+			animP.play("lvl1_sword_up")
 
 func _physics_process(delta):
+	if not alive:
+		return
 	if can_move:
 		get_input()
 	else:
@@ -99,6 +119,7 @@ func _physics_process(delta):
 func _ready() -> void:
 	add_to_group("player")
 	current_health = max_health
+	start_hp_regen()
 
 func _on_animation_animation_finished() -> void:
 	if $Animation.animation.begins_with("lvl1_sword"):
@@ -106,6 +127,7 @@ func _on_animation_animation_finished() -> void:
 		
 func set_can_move(value: bool) -> void:
 	can_move = value
+	
 # ---------- ПЕРЕСЧЁТ БАФОВ ----------
 
 func recalculate_bonuses() -> void:
@@ -175,3 +197,40 @@ func has_artefact_count(required_artefact_count: int) -> bool:
 	if artefact_count == required_artefact_count:
 			return true
 	return false
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if not is_attacking:
+		return
+	if body.is_in_group("enemy"):
+		body.take_damage(get_attack())
+		
+func take_damage(amount: int) -> void:
+	if not alive:
+		return
+	current_health -= amount
+	print("Player HP:", current_health)
+
+	if current_health <= 0:
+		die()
+		
+func die():
+	if not alive:
+		return
+
+	alive = false
+	print("PLAYER DEAD")
+
+	velocity = Vector2.ZERO
+	is_attacking = false
+
+	$Animation.play("die")
+	await $Animation.animation_finished
+	show_death_screen()
+	queue_free()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name.begins_with("lvl1_sword"):
+		is_attacking = false
+
+func show_death_screen():
+	get_tree().change_scene_to_file('res://scenes/Menus/death_screen2.tscn')

@@ -37,6 +37,7 @@ radius = 47.0
 height = 120.0
 
 [node name="fountain" type="Node2D"]
+z_as_relative = false
 script = ExtResource("1_nbcyg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

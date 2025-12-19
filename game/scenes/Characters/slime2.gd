@@ -7,11 +7,11 @@ var speed = 120
 var alive = true
 @export var max_health := 50
 var health := max_health
+var slime_attack = 20
 
 var player_in_attack_zone := false
 var is_attacking := false
 var can_attack := true
-var slime_attack = 20
 
 func take_damage(amount: int) -> void:
 	health -= amount
