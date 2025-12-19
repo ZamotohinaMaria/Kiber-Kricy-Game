@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://brmqqg56cgu04"]
+
+[ext_resource type="Script" uid="uid://duenm03mw7ilb" path="res://scenes/items/curtain.gd" id="1_blwfi"]
+[ext_resource type="Texture2D" uid="uid://b2j0pqacffcyn" path="res://assets/backgroud/tilesets/Objects/Decoration/Curtains.png" id="1_mp60h"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_blwfi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh68o"]
+atlas = ExtResource("1_mp60h")
+region = Rect2(135, 96, 16, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls88s"]
+size = Vector2(24, 75.97656)
+
+[node name="curtain" type="Area2D"]
+script = ExtResource("1_blwfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.02000013)
+scale = Vector2(1, 1.0015384)
+texture = SubResource("AtlasTexture_oh68o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.0117188)
+shape = SubResource("RectangleShape2D_ls88s")
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+offset_left = -46.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("2_blwfi")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

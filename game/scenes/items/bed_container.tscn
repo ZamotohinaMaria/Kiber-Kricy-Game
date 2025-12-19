@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://br84wb4bhfqxt"]
+
+[ext_resource type="Texture2D" uid="uid://81tnlj38hsav" path="res://assets/backgroud/tilesets/Objects/Furniture/Beds, Double.png" id="1_36ct2"]
+[ext_resource type="Script" uid="uid://beqahnh2c2t8b" path="res://scenes/items/bed_container.gd" id="1_bgnbd"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_bgnbd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydmb1"]
+atlas = ExtResource("1_36ct2")
+region = Rect2(1, 70, 62, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljcn2"]
+size = Vector2(73, 64.90625)
+
+[node name="bed_container" type="Area2D"]
+script = ExtResource("1_bgnbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -2)
+texture = SubResource("AtlasTexture_ydmb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 11.546875)
+shape = SubResource("RectangleShape2D_ljcn2")
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+offset_left = -53.0
+offset_top = -16.0
+offset_right = 43.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("2_bgnbd")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

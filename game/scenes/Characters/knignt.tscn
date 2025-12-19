@@ -1,10 +1,11 @@
-[gd_scene load_steps=84 format=3 uid="uid://wwhietw64uo2"]
+[gd_scene load_steps=85 format=3 uid="uid://wwhietw64uo2"]
 
 [ext_resource type="Script" uid="uid://c87vp557ibyvi" path="res://scenes/Characters/knignt.gd" id="1_03ovb"]
 [ext_resource type="Texture2D" uid="uid://bdbxsiau111lw" path="res://assets/characters/knight2/Swordsman_lvl2_Idle_with_shadow.png" id="2_5h0f7"]
 [ext_resource type="Texture2D" uid="uid://bqfe1jt0mykdc" path="res://assets/characters/knight2/Swordsman_lvl2_Run_with_shadow.png" id="3_n3jgn"]
 [ext_resource type="Script" uid="uid://cu4wqkhcxyixh" path="res://scenes/Characters/camera_2d.gd" id="4_5h0f7"]
 [ext_resource type="Texture2D" uid="uid://b27eo7klw1iul" path="res://assets/characters/knight2/Swordsman_lvl2_attack_with_shadow.png" id="4_n3jgn"]
+[ext_resource type="AudioStream" uid="uid://dyj3ga5tnta3k" path="res://assets/music/beg-po-zemle_JETUFOT8.mp3" id="6_ok5fk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4328a"]
 radius = 8.0
@@ -594,6 +595,9 @@ animations = [{
 z_as_relative = false
 collision_mask = 6
 script = ExtResource("1_03ovb")
+speed = null
+attack = null
+max_health = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
@@ -610,5 +614,9 @@ animation = &"lvl1_sword_down"
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_enabled = false
 script = ExtResource("4_5h0f7")
+
+[node name="StepPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ok5fk")
+volume_db = 8.966
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

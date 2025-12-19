@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://l6cu5w46cd7r"]
+
+[ext_resource type="Texture2D" uid="uid://crylt8g0hvkkm" path="res://assets/backgroud/tilesets/Objects/Decoration/Paintings.png" id="1_4poq6"]
+[ext_resource type="Script" uid="uid://sm256fh0iewy" path="res://scenes/items/picture.gd" id="1_stevo"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_stevo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b354"]
+atlas = ExtResource("1_4poq6")
+region = Rect2(34, 8, 29, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhunj"]
+size = Vector2(31, 37.625)
+
+[node name="picture" type="Area2D"]
+script = ExtResource("1_stevo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -2)
+texture = SubResource("AtlasTexture_8b354")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 29.1875)
+shape = SubResource("RectangleShape2D_rhunj")
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+offset_left = -53.0
+offset_top = -16.0
+offset_right = 43.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("2_stevo")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

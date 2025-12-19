@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5l2wjnm44qaf"
+path="res://.godot/imported/ходьба по земле.mp3-aaf50c41f682b637eb689fa2d399a230.mp3str"
+
+[deps]
+
+source_file="res://assets/music/ходьба по земле.mp3"
+dest_files=["res://.godot/imported/ходьба по земле.mp3-aaf50c41f682b637eb689fa2d399a230.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

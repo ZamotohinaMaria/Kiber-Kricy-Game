@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5u4xi1oretwm"]
+
+[ext_resource type="Texture2D" uid="uid://cekxdewtild1o" path="res://assets/backgroud/tilesets/dark-wood.png" id="1_q17en"]
+[ext_resource type="Script" uid="uid://p827b0sqkfct" path="res://scenes/items/chess.gd" id="1_xmv71"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_xmv71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ubr3"]
+atlas = ExtResource("1_q17en")
+region = Rect2(78, 618, 4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upy7x"]
+size = Vector2(50.125, 49.90625)
+
+[node name="chess" type="Area2D"]
+script = ExtResource("1_xmv71")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.02000013)
+scale = Vector2(1, 1.0015384)
+texture = SubResource("AtlasTexture_3ubr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_upy7x")
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+offset_left = -46.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = -7.0
+theme_override_fonts/font = ExtResource("2_xmv71")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://bweles1q1p37h"]
+
+[ext_resource type="Script" uid="uid://cp0dr6cncyes2" path="res://scenes/items/outside_door.gd" id="1_jkit3"]
+[ext_resource type="Texture2D" uid="uid://cvoydn7m7462q" path="res://assets/backgroud/tilesets/lpc-doors-animated-1.png" id="3_mvrry"]
+[ext_resource type="AudioStream" uid="uid://4o1hc2843aw1" path="res://assets/music/door-open.mp3" id="4_jkit3"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_swd08"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt301"]
+atlas = ExtResource("3_mvrry")
+region = Rect2(0, 272, 64, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5msn"]
+atlas = ExtResource("3_mvrry")
+region = Rect2(0, 276, 64, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40xfb"]
+atlas = ExtResource("3_mvrry")
+region = Rect2(0, 343, 64, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyvd6"]
+atlas = ExtResource("3_mvrry")
+region = Rect2(0, 410, 64, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovdmc"]
+atlas = ExtResource("3_mvrry")
+region = Rect2(0, 477, 64, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mefgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt301")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5msn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40xfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyvd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovdmc")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to7j4"]
+size = Vector2(32, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbs4q"]
+size = Vector2(32, 50)
+
+[node name="outside_door" type="Area2D"]
+script = ExtResource("1_jkit3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14.999998, -1.9999999)
+scale = Vector2(0.953125, 1)
+sprite_frames = SubResource("SpriteFrames_mefgt")
+animation = &"closed"
+
+[node name="KeyholeSprite" type="Sprite2D" parent="."]
+position = Vector2(25, 15)
+scale = Vector2(0.25, 0.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_to7j4")
+
+[node name="Label" type="Label" parent="."]
+z_index = 6
+offset_left = -46.0
+offset_top = -4.0
+offset_right = 50.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("4_swd08")
+theme_override_font_sizes/font_size = 8
+text = "Е - открыть"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vbs4q")
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jkit3")
+volume_db = 8.368

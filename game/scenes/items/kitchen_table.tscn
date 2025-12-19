@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://7k6hqusjdwy6"]
+
+[ext_resource type="Script" uid="uid://drm0p3dv3cprk" path="res://scenes/items/kitchen_table.gd" id="1_47xj8"]
+[ext_resource type="Texture2D" uid="uid://cekxdewtild1o" path="res://assets/backgroud/tilesets/dark-wood.png" id="2_mi32x"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_20wro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f63u"]
+atlas = ExtResource("2_mi32x")
+region = Rect2(160, 12, 32, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txdvo"]
+size = Vector2(31, 23.25)
+
+[node name="kitchen_table" type="Area2D"]
+script = ExtResource("1_47xj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -2)
+texture = SubResource("AtlasTexture_8f63u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 7.375)
+shape = SubResource("RectangleShape2D_txdvo")
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+offset_left = -53.0
+offset_top = -16.0
+offset_right = 43.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("3_20wro")
+theme_override_font_sizes/font_size = 8
+text = "Е - обыскать"
+horizontal_alignment = 1
+vertical_alignment = 1

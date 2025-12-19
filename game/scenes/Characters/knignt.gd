@@ -1,14 +1,23 @@
 extends CharacterBody2D
 
+@export var hud: Node
+@onready var step_player: AudioStreamPlayer2D = $StepPlayer
+
 # ---------- БАЗОВЫЕ СТАТЫ ----------
 @export var speed: float = 200.0
 @export var attack: int = 20
 @export var max_health: int = 200
 
 var current_health: int
+var artefact_count: int
 
 var last_dir = Vector2.DOWN
 var is_attacking = false
+var _was_moving : bool = false
+
+var current_interactable: Node = null
+var inventory: Array[ItemData] = []
+var can_move: bool = true
 # ---------- БАФЫ ----------
 var bonus_speed: float = 0.0
 var bonus_attack: int = 0
@@ -65,9 +74,26 @@ func attack_func():
 			$Animation.play("lvl1_sword_u")
 
 func _physics_process(delta):
-	get_input()
+	if can_move:
+		get_input()
+	else:
+		velocity = Vector2.ZERO
+		$Animation.play("idle1")   # стоим на месте, когда открыт шкаф
+		
 	move_and_collide(velocity * delta)
-	#z_index = int(global_position.y)
+	var moving_now := velocity.length() > 0.1
+
+	# только что начали двигаться
+	if moving_now and not _was_moving:
+		if step_player and not step_player.playing:
+			step_player.play()
+
+	# только что остановились
+	if not moving_now and _was_moving:
+		if step_player and step_player.playing:
+			step_player.stop()
+
+	_was_moving = moving_now
 
 
 func _ready() -> void:
@@ -77,6 +103,9 @@ func _ready() -> void:
 func _on_animation_animation_finished() -> void:
 	if $Animation.animation.begins_with("lvl1_sword"):
 		is_attacking = false
+		
+func set_can_move(value: bool) -> void:
+	can_move = value
 # ---------- ПЕРЕСЧЁТ БАФОВ ----------
 
 func recalculate_bonuses() -> void:
@@ -98,8 +127,7 @@ func recalculate_bonuses() -> void:
 
 # ---------- ИНВЕНТАРЬ ----------
 
-var current_interactable: Node = null
-var inventory: Array[ItemData] = []   # простой инвентарь игрока
+   # простой инвентарь игрока
 
 func set_current_interactable(node: Node) -> void:
 	current_interactable = node
@@ -111,11 +139,19 @@ func clear_current_interactable(node: Node) -> void:
 func add_item(item: ItemData) -> void:
 	inventory.append(item)
 	recalculate_bonuses()
+	if item.artefact != 0:
+		artefact_count += 1
+		if hud and hud.has_method("update_artefacts"):
+			hud.update_artefacts(artefact_count)
+	if item.key != 0:
+		if hud and hud.has_method("update_keys"):
+			hud.update_keys(item)
 	print("Взяли предмет:", item.name)
 	print("Инвентарь сейчас:", get_inventory_names())
 	print("Атака:", get_attack(), 
 		  "Макс. HP:", get_max_health(), 
-		  "Скорость:", get_speed())
+		  "Скорость:", get_speed(), 
+		  "Артефактов:", artefact_count)
 
 func get_inventory_names() -> Array[String]:
 	var names: Array[String] = []
@@ -128,4 +164,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		current_interactable.interact(self)
 	if event.is_action_pressed("mouse_left") and not is_attacking:
 		attack_func()
-		
+
+func has_key(key_id: int) -> bool:
+	for item in inventory:
+		if item.key == key_id:
+			return true
+	return false
+
+func has_artefact_count(required_artefact_count: int) -> bool:
+	if artefact_count == required_artefact_count:
+			return true
+	return false

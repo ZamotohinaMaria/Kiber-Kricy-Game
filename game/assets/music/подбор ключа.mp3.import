@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kii51m3utyxg"
+path="res://.godot/imported/подбор ключа.mp3-e1c0f5693cf6ba694ada396dd6b7bace.mp3str"
+
+[deps]
+
+source_file="res://assets/music/подбор ключа.mp3"
+dest_files=["res://.godot/imported/подбор ключа.mp3-e1c0f5693cf6ba694ada396dd6b7bace.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
