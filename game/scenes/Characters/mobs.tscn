@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhq34pty56r62"]
+[gd_scene load_steps=4 format=3 uid="uid://b08ecue37vkhb"]
 
 [ext_resource type="PackedScene" uid="uid://d4c7lc50uq0q8" path="res://scenes/Characters/slime.tscn" id="1_5p58h"]
-[ext_resource type="PackedScene" uid="uid://4grohyhacnrf" path="res://scenes/Characters/slime2.tscn" id="2_bob45"]
+[ext_resource type="PackedScene" uid="uid://761rlqt840km" path="res://scenes/Characters/slime2.tscn" id="2_bob45"]
 [ext_resource type="PackedScene" uid="uid://dhnieorcwv7gv" path="res://scenes/Characters/orc.tscn" id="3_6rkwq"]
 
 [node name="Mobs" type="Node2D"]
 
 [node name="slime" parent="." instance=ExtResource("1_5p58h")]
-position = Vector2(746, 37)
+position = Vector2(744, 136)
 
 [node name="slime2" parent="." instance=ExtResource("2_bob45")]
-position = Vector2(144, 429)
+position = Vector2(279, 431)
 
 [node name="orc" parent="." instance=ExtResource("3_6rkwq")]
 position = Vector2(726, 590)

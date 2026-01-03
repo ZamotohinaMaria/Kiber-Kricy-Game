@@ -35,7 +35,7 @@ func interact(player: Node) -> void:
 	if player.has_artefact_count(required_artefact_count):
 		_open(player)
 	else:
-		label.text = "Дверь заперта. Нужно 4 артефакта"
+		label.text = "Дверь заперта.\nНужно 4 артефакта"
 		print("Нужно №%d артефакта" % required_artefact_count)
 
 func _open(player: Node) -> void:

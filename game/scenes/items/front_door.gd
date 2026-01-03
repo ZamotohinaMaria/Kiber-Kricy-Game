@@ -35,7 +35,7 @@ func interact(player: Node) -> void:
 	if player.has_key(required_key_id):
 		_open(player)
 	else:
-		label.text = "Дверь заперта. Нужен ключ."
+		label.text = "Дверь заперта.\nНужен ключ."
 		print("Дверь заперта. Нужен ключ №%d" % required_key_id)
 
 func _open(player: Node) -> void:

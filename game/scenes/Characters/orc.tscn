@@ -1,6 +1,6 @@
 [gd_scene load_steps=83 format=3 uid="uid://dhnieorcwv7gv"]
 
-[ext_resource type="Script" uid="uid://bivecgf7ybmwg" path="res://scenes/Characters/orc.gd" id="1_hil8a"]
+[ext_resource type="Script" path="res://scenes/Characters/orc.gd" id="1_hil8a"]
 [ext_resource type="Texture2D" uid="uid://brb6aou33lycg" path="res://assets/characters/orc/orc1_death_with_shadow.png" id="1_ncwmo"]
 [ext_resource type="Texture2D" uid="uid://cyehvaoqq8hrh" path="res://assets/characters/orc/orc1_idle_with_shadow.png" id="2_hil8a"]
 [ext_resource type="Texture2D" uid="uid://bw3jbco0t3ysw" path="res://assets/characters/orc/orc1_walk_attack_front _with_shadow.png" id="2_l8a1n"]
@@ -485,6 +485,45 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hil8a"]
 radius = 84.05355
 
+[sub_resource type="Animation" id="Animation_5rl7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit-box/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hit-box/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 20)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hit-box/CollisionShape2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707964]
+}
+
 [sub_resource type="Animation" id="Animation_l8a1n"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -896,45 +935,6 @@ tracks/1/keys = {
 "values": ["run_up"]
 }
 
-[sub_resource type="Animation" id="Animation_5rl7k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hit-box/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("hit-box/CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 20)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hit-box/CollisionShape2D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.5707964]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dx1ap"]
 _data = {
 &"RESET": SubResource("Animation_5rl7k"),
@@ -958,6 +958,7 @@ height = 50.0
 radius = 29.068884
 
 [node name="orc" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_hil8a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

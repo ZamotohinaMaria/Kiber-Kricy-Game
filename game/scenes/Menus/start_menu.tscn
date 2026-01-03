@@ -1,51 +1,53 @@
 [gd_scene load_steps=15 format=3 uid="uid://jhyuywgfd0sf"]
 
 [ext_resource type="Script" uid="uid://cwhp44gi4viu0" path="res://scenes/Menus/start_menu.gd" id="1_h61rw"]
-[ext_resource type="Texture2D" uid="uid://ddxex7tpqi6ep" path="res://assets/backgroud/ChatGPT Image 18 нояб. 2025 г., 22_35_14.png" id="2_fcv5n"]
+[ext_resource type="Texture2D" uid="uid://ddxex7tpqi6ep" path="res://assets/backgroud/ChatGPT Image 18 ╨╜╨╛╤П╨▒. 2025 ╨│., 22_35_14.png" id="2_fcv5n"]
 [ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_4v6gu"]
 [ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="4_nxjfj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhnvy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t17qu"]
 atlas = ExtResource("4_nxjfj")
 region = Rect2(209, 81, 46, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhnvy"]
-texture = SubResource("AtlasTexture_mhnvy")
+texture = SubResource("AtlasTexture_t17qu")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ytvr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7tht"]
 atlas = ExtResource("4_nxjfj")
 region = Rect2(208, 80, 48, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ytvr"]
-texture = SubResource("AtlasTexture_4ytvr")
+texture = SubResource("AtlasTexture_w7tht")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhri0"]
 atlas = ExtResource("4_nxjfj")
 region = Rect2(209, 81, 46, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86rl"]
-texture = SubResource("AtlasTexture_g3eks")
+texture = SubResource("AtlasTexture_xhri0")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wepbc"]
 atlas = ExtResource("4_nxjfj")
 region = Rect2(208, 80, 48, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3eks"]
-texture = SubResource("AtlasTexture_v86rl")
+texture = SubResource("AtlasTexture_wepbc")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtaik"]
 atlas = ExtResource("4_nxjfj")
 region = Rect2(209, 81, 46, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13sgg"]
-texture = SubResource("AtlasTexture_13sgg")
+texture = SubResource("AtlasTexture_gtaik")
 
 [node name="start_menu" type="Node2D"]
 script = ExtResource("1_h61rw")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 1926.0
+offset_bottom = 1091.0
 texture = ExtResource("2_fcv5n")
 expand_mode = 1
 
@@ -57,9 +59,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
+offset_left = -305.5
 offset_top = -242.0
-offset_right = 187.0
+offset_right = 301.0
 offset_bottom = 242.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -67,28 +69,28 @@ theme_override_constants/separation = 50
 alignment = 1
 
 [node name="start" type="Button" parent="TextureRect2/VBoxContainer"]
-custom_minimum_size = Vector2(250, 100)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
 theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
 theme_override_fonts/font = ExtResource("3_4v6gu")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_mhnvy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4ytvr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_v86rl")
 text = "НАЧАТЬ ИГРУ"
 
 [node name="quit" type="Button" parent="TextureRect2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
 theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
 theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
 theme_override_fonts/font = ExtResource("3_4v6gu")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_mhnvy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_g3eks")
 theme_override_styles/hover = SubResource("StyleBoxTexture_13sgg")

@@ -1,16 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://guyerrbm0st4"]
 
 [ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="1_4404p"]
+[ext_resource type="Script" uid="uid://7ojjmbp3dtul" path="res://scenes/Menus/sign_screen.gd" id="1_xuw5y"]
 [ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_iyokb"]
-[ext_resource type="Texture2D" uid="uid://co74m07xappoe" path="res://assets/backgroud/tilesets/dungeonex.png" id="3_iyokb"]
+[ext_resource type="Texture2D" uid="uid://tmod86uic8hv" path="res://assets/backgroud/tilesets/LPC Submissions/Icon13.png" id="4_kqivr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2atj1"]
 atlas = ExtResource("1_4404p")
 region = Rect2(208, 144, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d0y25"]
-atlas = ExtResource("3_iyokb")
-region = Rect2(68, 259, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhnvy"]
 atlas = ExtResource("1_4404p")
@@ -33,13 +30,14 @@ region = Rect2(209, 81, 46, 14)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0y25"]
 texture = SubResource("AtlasTexture_g3eks")
 
-[node name="death_screen" type="Control"]
+[node name="sign_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xuw5y")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 100
@@ -48,7 +46,7 @@ offset_left = -18.0
 offset_top = -32.0
 offset_right = 1940.0
 offset_bottom = 1114.0
-color = Color(0, 0, 0, 1)
+color = Color(0.5489626, 0.5489626, 0.54896253, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 100
@@ -70,9 +68,7 @@ offset_bottom = 401.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_iyokb")
 theme_override_font_sizes/font_size = 36
-text = "К сожалению, 
-(или к счастью) 
-вы умерли."
+text = "Упс, калитки нет..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -84,7 +80,7 @@ offset_left = 884.0
 offset_top = 428.0
 offset_right = 1009.0
 offset_bottom = 554.0
-texture = SubResource("AtlasTexture_d0y25")
+texture = ExtResource("4_kqivr")
 
 [node name="start" type="Button" parent="TextureRect2"]
 custom_minimum_size = Vector2(250, 100)
@@ -103,3 +99,5 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_iyokb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2atj1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_d0y25")
 text = "В ГЛАВНОЕ МЕНЮ"
+
+[connection signal="pressed" from="TextureRect2/start" to="." method="_on_start_pressed"]

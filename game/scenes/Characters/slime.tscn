@@ -715,6 +715,21 @@ radius = 32.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ioc21"]
 radius = 34.0147
 
+[sub_resource type="Animation" id="Animation_3t2c5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit-box/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_i0nb3"]
 length = 1.375
 tracks/0/type = "value"
@@ -1034,21 +1049,6 @@ tracks/1/keys = {
 "values": ["run_up"]
 }
 
-[sub_resource type="Animation" id="Animation_3t2c5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hit-box/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3t2c5"]
 _data = {
 &"RESET": SubResource("Animation_3t2c5"),
@@ -1065,6 +1065,7 @@ _data = {
 }
 
 [node name="slime" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_m767p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

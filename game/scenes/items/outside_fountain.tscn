@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm3iom00uvcnh"]
+
+[ext_resource type="Texture2D" uid="uid://bb0vronl1wdo4" path="res://assets/backgroud/tilesets/LPC Submissions/victorian-garden.png" id="1_qrr25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63kak"]
+atlas = ExtResource("1_qrr25")
+region = Rect2(320, 1566, 64, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xwca"]
+atlas = ExtResource("1_qrr25")
+region = Rect2(384, 1566, 64, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydlct"]
+atlas = ExtResource("1_qrr25")
+region = Rect2(448, 1566, 64, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eb55l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63kak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xwca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydlct")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8j5u"]
+radius = 47.0
+height = 120.0
+
+[node name="outside_fountain" type="Node2D"]
+z_index = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_eb55l")
+autoplay = "default"
+frame_progress = 0.82668835
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l8j5u")

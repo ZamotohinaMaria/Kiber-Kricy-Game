@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://4grohyhacnrf"]
+[gd_scene load_steps=115 format=3 uid="uid://761rlqt840km"]
 
 [ext_resource type="Script" uid="uid://bfqifvan6p4nk" path="res://scenes/Characters/slime.gd" id="1_vye7t"]
 [ext_resource type="Texture2D" uid="uid://fp3cepl8311" path="res://assets/characters/slime/Slime2_Attack_with_shadow.png" id="2_ti3wu"]
@@ -707,7 +707,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i0nb3"]
-radius = 167.19151
+radius = 159.0786
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pamlx"]
 radius = 32.0
@@ -1065,10 +1065,11 @@ _data = {
 }
 
 [node name="slime" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_vye7t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+visibility_layer = 7
 shape = SubResource("CircleShape2D_tgu61")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -1083,6 +1084,7 @@ autoplay = "idle"
 shape = SubResource("CircleShape2D_i0nb3")
 
 [node name="hit-box" type="Area2D" parent="."]
+position = Vector2(0, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit-box"]
 position = Vector2(0, 5)

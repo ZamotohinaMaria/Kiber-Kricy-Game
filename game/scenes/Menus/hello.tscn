@@ -1,0 +1,123 @@
+[gd_scene load_steps=14 format=3 uid="uid://cask3o4y14aeo"]
+
+[ext_resource type="Texture2D" uid="uid://cjmbfmeuk5kgc" path="res://assets/GUI/TileMap7.png" id="1_4x37j"]
+[ext_resource type="Texture2D" uid="uid://4gr0pfqwaa7w" path="res://assets/backgroud/blur.png" id="1_a5o6r"]
+[ext_resource type="Script" uid="uid://c4y4f0oespq28" path="res://scenes/Menus/hello.gd" id="1_od67i"]
+[ext_resource type="FontFile" uid="uid://cfqi1aqgs4y7l" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_a5o6r"]
+[ext_resource type="Texture2D" uid="uid://co74m07xappoe" path="res://assets/backgroud/tilesets/dungeonex.png" id="3_od67i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wd7m"]
+atlas = ExtResource("1_4x37j")
+region = Rect2(208, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbgck"]
+atlas = ExtResource("3_od67i")
+region = Rect2(68, 259, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhnvy"]
+atlas = ExtResource("1_4x37j")
+region = Rect2(20, 83, 40, 9)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t86xk"]
+texture = SubResource("AtlasTexture_mhnvy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ytvr"]
+atlas = ExtResource("1_4x37j")
+region = Rect2(208, 80, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51sto"]
+texture = SubResource("AtlasTexture_4ytvr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
+atlas = ExtResource("1_4x37j")
+region = Rect2(209, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ligq2"]
+texture = SubResource("AtlasTexture_g3eks")
+
+[node name="hello" type="Node2D"]
+script = ExtResource("1_od67i")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_right = 1934.0
+offset_bottom = 1109.0
+texture = ExtResource("1_a5o6r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 100
+custom_minimum_size = Vector2(128, 128)
+offset_left = 303.0
+offset_top = 135.0
+offset_right = 1658.0
+offset_bottom = 945.0
+texture = SubResource("AtlasTexture_1wd7m")
+
+[node name="Label" type="Label" parent="."]
+z_index = 100
+offset_left = 379.0
+offset_top = 198.0
+offset_right = 1597.0
+offset_bottom = 351.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_a5o6r")
+theme_override_font_sizes/font_size = 36
+text = "Я проснулся в неизвестном замке. Царит странная атмосфера..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 100
+offset_left = 671.0
+offset_top = 784.0
+offset_right = 738.0
+offset_bottom = 854.0
+texture = SubResource("AtlasTexture_kbgck")
+
+[node name="start" type="Button" parent="TextureRect2"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 0
+offset_left = 91.0
+offset_top = -6.0
+offset_right = 528.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.18225607, 0.09542044, 0.0058128713, 1)
+theme_override_colors/font_focus_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_pressed_color = Color(0.42002204, 0.24580705, 0.020635962, 1)
+theme_override_colors/font_hover_color = Color(0.33533216, 0.19221696, 0.013018069, 1)
+theme_override_fonts/font = ExtResource("2_a5o6r")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_t86xk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_51sto")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ligq2")
+text = "ВПЕРЕД!"
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = 100
+offset_left = 1208.0
+offset_top = 788.0
+offset_right = 1275.0
+offset_bottom = 857.0
+texture = SubResource("AtlasTexture_kbgck")
+flip_h = true
+
+[node name="Label2" type="Label" parent="."]
+z_index = 100
+offset_left = 372.0
+offset_top = 442.0
+offset_right = 1590.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_a5o6r")
+theme_override_font_sizes/font_size = 29
+text = "Управление: 
+
+Ходьба - WASD
+Взять предмет: тыкунть на него
+Выйти из инвентаря - ESC
+Бить - ЛКМ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="TextureRect2/start" to="." method="_on_start_pressed"]
